@@ -2,4 +2,17 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: test
-  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels: test
+  template:
+    metadata:
+      labels:
+        app: test
+      spec:
+        containers:
+          - name: test
+            ports:
+              - containerPorts: 80
+
