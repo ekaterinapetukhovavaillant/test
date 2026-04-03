@@ -5,14 +5,15 @@ metadata:
 spec:
   replicas: 1
   selector:
-    matchLabels: test
+    matchLabels:
+      app: test
   template:
     metadata:
       labels:
         app: test
-      spec:
-        containers:
-          - name: test
-            ports:
-              - containerPorts: 80
+    spec:
+      containers:
+        - name: test
+          ports:
+            - containerPort: 80
 
